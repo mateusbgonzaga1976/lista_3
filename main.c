@@ -1,29 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int main(){
 
-int main() {
-    char str1[30],str2[30];
-    int i;
+    char str1[100];
+    char str2[100];
 
-    printf("Digite uma frase:");
-    fflush(stdout);
-    fgets(str1,30,stdin);
+    printf("Digite um texto de ate 100 caracteres:\n");
+    gets(str1);
 
-    printf("Digite uma frase:");
-    fflush(stdout);
-    fgets(str2,30,stdin);
-
-    i = 0;
-    while (str1[i] != 0 && str1[i] == str2[i]){
-        i++;
+    for(int i = 0; i < sizeof(str1) && str1[i] != '\0'; i++){
+        str2[i] = str1[i];
     }
 
-    if (str1[i] == 0 && str2[i] == 0){
-        printf("As frases sao iguais\n");
-    } else {
-        printf("As frases nao sao iguais\n");
-    }
+    printf("%s\n", str2);
+
     system("pause");
     return 0;
 }
