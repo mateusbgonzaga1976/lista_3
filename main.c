@@ -1,26 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
 
-    char str1[100];
-    printf("Digite um texto com no maximo 100 caracteres:\n");
-    gets(str1);
-    int vogal = 0;
+int main() {
+    char str1[30],str2[30];
+    int i;
 
-    for(int i = 0; i < sizeof(str1) && str1[i] != '\0'; i++){
-        if(str1[i] == 'a' || str1[i] == 'e' || str1[i] == 'i' || str1[i] == 'o' || str1[i] == 'u'){
-            vogal++;
-        }
-        if(str1[i] == 'A' || str1[i] == 'E' || str1[i] == 'I' || str1[i] == 'O' || str1[i] == 'U'){
-            vogal++;
-        }
+    printf("Digite uma frase:");
+    fflush(stdout);
+    fgets(str1,30,stdin);
+
+    printf("Digite uma frase:");
+    fflush(stdout);
+    fgets(str2,30,stdin);
+
+    i = 0;
+    while (str1[i] != 0 && str1[i] == str2[i]){
+        i++;
     }
 
-    printf("Foram contadas um total de %d vogais no texto.\n", vogal);
-
+    if (str1[i] == 0 && str2[i] == 0){
+        printf("As frases sao iguais\n");
+    } else {
+        printf("As frases nao sao iguais\n");
+    }
     system("pause");
     return 0;
 }
-
-
