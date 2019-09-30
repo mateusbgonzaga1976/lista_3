@@ -2,17 +2,19 @@
 #include <stdlib.h>
 
 
-int main(void)
+int main()
 {
-    char str1[30] = "Aula de";
-    char str2[50] = " tecnicas de desenvolvimento de algoritmos.";
+    char frase[100];
+    int tamanho;
 
-    strncat(str1, str2, 80);
+    printf ("Digite uma frase\n\n");
+    gets (frase);
 
-    printf("%s\n", str1);
+    tamanho = strlen(frase);
 
+    printf("\nTotal de letras da Frase : %d",tamanho);
+    printf("\n\n");
 
-    getch();
-    system("pause");
+    system ("pause");
     return 0;
 }
